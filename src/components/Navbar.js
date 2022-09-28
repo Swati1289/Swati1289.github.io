@@ -2,34 +2,50 @@ import React from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { FaMoon, FaSun, FaTimes, FaBars } from "react-icons/fa";
 import "../style.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function NavBar() {
-  const [light, setLight] = useState(false);
+  const [theme, setTheme] = useState("light");
   const [menuon, setMenu] = useState(false);
   /*const navStatus = function (navOnDark) {
    light === false
       ? navOnDark.forEach((nav) => nav.classList.add("navondark"))
       : navOnDark.forEach((nav) => nav.classList.remove("navondark"));
   };*/
+  const bodyOfDocument = document.querySelector("html");
+  const navOnDark = document.querySelectorAll(".decoration");
 
   const lightOnClick = function (e) {
     e.preventDefault();
-    const bodyOfDocument = document.querySelector("html");
-    const navOnDark = document.querySelectorAll(".decoration");
+    if (theme === "light") {
+      window.localStorage.setItem("theme", "dark");
 
-    if (light === false) {
+      setTheme("dark");
+    } else {
+      window.localStorage.setItem("theme", "light");
+
+      setTheme("light");
+    }
+  };
+  useEffect(() => {
+    const localTheme = window.localStorage.getItem("theme");
+    localTheme && setTheme(localTheme);
+  }, []);
+
+  const changeOnAdd = function () {
+    const localTheme = window.localStorage.getItem("theme");
+    if (localTheme === "dark") {
       bodyOfDocument.classList.add("sunbody");
       //navStatus();
       navOnDark.forEach((nav) => nav.classList.add("navondark"));
-      setLight(!light);
     } else {
       navOnDark.forEach((nav) => nav.classList.remove("navondark"));
       //navStatus();
       bodyOfDocument.classList.remove("sunbody");
-      setLight(!light);
     }
   };
+
+  changeOnAdd();
 
   const toggleMenu = function () {
     setMenu(!menuon);
@@ -71,7 +87,7 @@ function NavBar() {
       </ul>
       {menuon === false && (
         <div className="moon" onClick={lightOnClick}>
-          {light === false ? <FaMoon className="" /> : <FaSun />}
+          {theme === "light" ? <FaMoon className="" /> : <FaSun />}
         </div>
       )}
       <div className="hamburger--bar" onClick={toggleMenu}>

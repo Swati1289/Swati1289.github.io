@@ -7,8 +7,8 @@ function Contact() {
     <div id="contact">
       <h1 className="head">CONTACT</h1>
       <a
-        href="https://mail.google.com"
-        target="blank"
+        href="mailto:swati.hegde650@gmail.com"
+        target="_blank"
         className="btn btn--mail"
       >
         Email Me
