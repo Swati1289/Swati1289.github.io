@@ -1,7 +1,7 @@
 import React from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { FaArrowUp } from "react-icons/fa";
-import "../style.css";
+import "./style.css";
 export default function Footer() {
   return (
     <div className="footer">

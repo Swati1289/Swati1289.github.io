@@ -1,7 +1,7 @@
 import React from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { FaMoon, FaSun, FaTimes, FaBars } from "react-icons/fa";
-import "../style.css";
+import "./style.css";
 import { useState, useEffect } from "react";
 
 function NavBar() {
