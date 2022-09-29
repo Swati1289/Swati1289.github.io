@@ -282,6 +282,9 @@ h1 .name {
   .moon {
     padding-right: 4%;
   }
+  .navlist li {
+    margin-right: 200px;
+  }
   .project-container {
     max-width: 100%;
     display: grid;
