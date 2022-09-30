@@ -10,11 +10,11 @@ function About() {
       </h1>
       <h2>Frontend Developer</h2>
       <p className="about-content">
-        I am frontend developer interested in developing user freindly web
-        applications. with React HTML and CSS Self-motivated, hardworking and
+        I am a front-end developer interested in developing user-friendly web
+        applications with React HTML and CSS.A Self-motivated, hardworking and
         dedicated student interested to work and learn in challenging
         environment. Always energetic and eager to learn new things with good
-        follow through skills, activeness, punctuality and honesty.
+        follow-through skills, activeness, punctuality and honesty.
       </p>
       <a
         href="https://drive.google.com/file/d/137-aFGMXKLmRbj4CiUYHTeWMZFGvIfJE/view?usp=sharing"
